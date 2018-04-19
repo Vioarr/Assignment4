@@ -4,12 +4,12 @@
  */
 public class KMP {
  
-	/**
-	 * Calculates the failure function
-	 * @param p the pattern to be searched
-	 * @param f the calculated failure function
-	 */
-	private void failure(String p,int f[]){
+    /**
+     * Calculates the failure function
+     * @param p the pattern to be searched
+     * @param f the calculated failure function
+     */
+    private void failure(String p,int f[]){
         int i=1;
         int j=0;
          f[0]=0;
@@ -32,19 +32,19 @@ public class KMP {
         }
     }
     
-	/**
-	 * Search for the pattern specified in the given text
-	 * @param text plain text to be searched
-	 * @param pattern pattern to be found in the text
-	 * @param f Failure function calculated (go back to your CSI2110/2510 notes if you are unsure what this is :)
-	 * @return an index specifying the start of the pattern in the text. In case the pattern is not found in the text,
-	 * -1 is returned.
-	 */
-	public int search(String text,String pattern){
-		// Create an array for the failure function
-		int f[]=new int[pattern.length()];
+    /**
+     * Search for the pattern specified in the given text
+     * @param text plain text to be searched
+     * @param pattern pattern to be found in the text
+     * @param f Failure function calculated (go back to your CSI2110/2510 notes if you are unsure what this is :)
+     * @return an index specifying the start of the pattern in the text. In case the pattern is not found in the text,
+     * -1 is returned.
+     */
+    public int search(String text,String pattern){
+        // Create an array for the failure function
+        int f[]=new int[pattern.length()];
 
-		// get the failure function
+        // get the failure function
         failure(pattern,f);
         
         // execute the knuth morris pratt algorithm
